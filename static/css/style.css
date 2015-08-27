@@ -58,7 +58,6 @@ div.daycontent {
 .calendar {
 	max-height: 300px;
 	overflow: auto;
-	border-collapse: collapse;
 }
 
 span.little {

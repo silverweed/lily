@@ -5,3 +5,7 @@ var attend = function (el, day, month, year) {
 	var bounds = el.getBoundingClientRect();
 	panel.style.display = 'block';
 }
+
+var closeAttend = function () {
+	document.getElementById('attend-data').style.display = 'none';	
+}
