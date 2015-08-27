@@ -1,0 +1,35 @@
+{{#Data}}
+{{#Meetup}}
+<h3><a class='nounder' href='/'>&lt;</a> Meetup at {{City}}</h3>
+{{#DateConfirmed}}
+<h6>on {{#FriendlyTime}}{{When}}{{/FriendlyTime}}</h6>
+{{/DateConfirmed}}
+{{^DateConfirmed}}
+<h6>proposed dates: from {{#FriendlyTime}}{{From}} to {{To}}{{/FriendlyTime}}</h6>
+{{/DateConfirmed}}
+
+<section class='calendar'>
+    {{#Days}}
+    <div class='day row'>
+        <div class='two bordered big-text columns'>
+            {{Day}}<span class='little'>/{{Month}}/{{Year}}</span>
+        </div>
+        <div class='nine bordered right columns'>
+            {{#People}}
+            <span>{{Name}}</span>, 
+            {{/People}}
+            {{^People}}
+            <em>No one yet!</em>
+            {{/People}}
+        </div>
+        <div class='one column'>
+            <a class='nounder big-text'  onclick='attend(this, {{Day}}, {{Month}}, 20{{Year}})'>+</a>
+        </div>
+    </div>
+    {{/Days}}
+</section>
+<div id='attend-data'>
+ROBEH
+</div>
+{{/Meetup}}
+{{/Data}}

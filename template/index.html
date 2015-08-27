@@ -1,0 +1,36 @@
+{{#Data}}
+<h3>/cr/ meetups</h3>
+
+<form action='/new' method='POST'>
+    <legend>New meetup</legend>
+    <input type='text' name='city' placeholder='City' required />
+    <label for='from'>From</label>
+    <input id='from' name='from' type='text' placeholder='DD/MM/YY'/>
+    <label for='to'>To</label>
+    <input id='to' name='to' type='text' placeholder='DD/MM/YY'/>
+    <br>
+    <input type='submit' value='Create'/>
+</form>
+
+<h5>Currently scheduled:</h5>
+<dl>
+    {{#Meetups}}
+    <dt><a href='/m/{{Url}}'>{{City}}</a></dt>
+    {{#DateConfirmed}}
+    {{#FriendlyTime}}
+    <dl>on {{When}}</dl>
+    {{/FriendlyTime}}
+    {{/DateConfirmed}}
+    
+    {{^DateConfirmed}}
+    {{#FriendlyTime}}
+    <dl>possible dates: {{From}} to {{To}}</dl>
+    {{/FriendlyTime}}
+    {{/DateConfirmed}}
+    {{/Meetups}}
+
+    {{^Meetups}}
+    <dt>None</dt>
+    {{/Meetups}}
+</dl>
+{{/Data}}
